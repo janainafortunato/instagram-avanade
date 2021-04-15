@@ -15,7 +15,7 @@ module.exports = async(req, res, next) => {
         res.status(400).json({erro: "O usuario não cadastrou o nome, email ou senha"});
         return; 
 
-    } else if(senha.length < 6 && senha.length >= 12 ){
+    } else if(senha.length < 6 || senha.length >= 12 ){
 
         res.status(400).json({erro: "A senha não pode ser menor que 6 ou maior de 12 digitos!"});
         return;
